@@ -1,0 +1,11 @@
+# Visual Studio folders
+.vs/
+.vscode/
+
+#normal files
+*.exe 
+*.obj
+*.o
+*.res
+*.zip
+*.txt
