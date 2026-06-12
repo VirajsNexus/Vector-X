@@ -119,3 +119,39 @@ void Vector::print()
     }
     std::cout << std::endl;
 }
+
+void Vector::insert(int index, int value)
+{
+    if(index < 0 || index > size)
+    {
+        throw std::out_of_range("Index out of bounds");
+    }
+
+    if(size == capacity)
+    {
+        resize();
+    }
+
+    //shifting elements to the right
+    for(int i = size; i > index; i--)
+    {
+        data[i] = data[i - 1];
+    }
+    data[index] = value;
+    size++;
+}
+
+void Vector::erase(int index)
+{
+    if(index < 0 || index >= size)
+    {
+        throw std::out_of_range("Index out of range");
+    }
+
+    for(int i = index; i < size - 1; i++)
+    {
+        data[i] = data[i + 1];
+    }
+
+    size--;
+}

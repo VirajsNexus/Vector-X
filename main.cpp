@@ -7,19 +7,22 @@ int main(void)
 {
     Vector v;
 
-   for(int i = 0; i < 10; i++)
-   {
-        v.push_back(i * 10);
-   }
-   v.print();
+   v.push_back(10);
+    v.push_back(30);
+    v.push_back(40);
 
-   cout << "Element at index 2: " << v[2] << endl;
-    cout << "Front element: " << v.front() << endl;
+    cout << "Original:\n";
+    v.print();
 
-    v.clear();
+    v.insert(1, 20);
 
-    cout << "Size after clear: " << v.getSize() << endl;
-    cout << "Is vector empty? " << v.empty()<< endl;
+    cout << "\nAfter insert:\n";
+    v.print();
+
+    v.erase(2);
+
+    cout << "\nAfter erase:\n";
+    v.print();
 
     return (0);
 }

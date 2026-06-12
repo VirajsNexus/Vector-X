@@ -34,6 +34,9 @@ class Vector
         int& at(int index);
         void print();
 
+        void insert(int index, int value);
+        void erase(int index);
+
 };
 
 #endif
