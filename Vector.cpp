@@ -1,4 +1,6 @@
 #include "Vector.h"
+#include <iostream>
+#include <stdexcept>
 
 Vector::Vector()
 {
@@ -57,5 +59,63 @@ int Vector::getCapacity()
 
 int& Vector::operator[](int index)
 {
+    if(index < 0 || index >= size)
+    {
+        throw std::out_of_range("Index out of bounds");
+    }
     return data[index];
+}
+
+void Vector::pop_back()
+{
+    if(size > 0)
+    {
+        size--;
+    }
+    else
+    {
+        throw std::out_of_range("Vector is empty");
+    }
+}
+
+
+int Vector::front()
+{
+    if(size > 0)
+    {
+        return data[0];
+    }
+    throw std::out_of_range("Vector is empty");
+}
+
+int Vector::back()
+{
+    if(size > 0)
+    {
+        return data[size - 1];
+    }
+    throw std::out_of_range("Vector is empty");
+}
+
+bool Vector::empty()
+{
+    return size == 0;
+}
+
+int &Vector::at(int index)
+{
+    if(index < 0 || index >= size)
+    {
+        throw std::out_of_range("Index out of bounds");
+    }
+    return data[index];
+}
+
+void Vector::print()
+{
+    for(int i = 0; i < size; i++)
+    {
+        std::cout<< " | " << data[i] << " ";
+    }
+    std::cout << std::endl;
 }

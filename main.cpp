@@ -7,21 +7,19 @@ int main(void)
 {
     Vector v;
 
-    v.push_back(10);
-    v.push_back(20);
-    v.push_back(30);
+   for(int i = 0; i < 10; i++)
+   {
+        v.push_back(i * 10);
+   }
+   v.print();
 
-    cout << "First Element  : \t" << v[0] << endl;
-    cout << "Second Element : \t" << v[1] << endl;
-    cout << "Third Element  : \t" << v[2] << endl;
+   cout << "Element at index 2: " << v[2] << endl;
+    cout << "Front element: " << v.front() << endl;
 
-    v[1] = 100;
+    v.clear();
 
-    cout << "\nAfter Modification:\n";
-
-    cout << "First Element  : \t" << v[0] << endl;
-    cout << "Second Element : \t" << v[1] << endl;
-    cout << "Third Element  : \t" << v[2] << endl;
+    cout << "Size after clear: " << v.getSize() << endl;
+    cout << "Is vector empty? " << v.empty()<< endl;
 
     return (0);
 }
